@@ -17,7 +17,7 @@ case $1 in
         curl -sX GET "${HOST}:${PORT}/comp" | \
             jq -r 'to_entries[] | [.value.ip, .value.name] | @tsv' \
             > /tmp/hosts.xxx
-        cat /etc/hosts.stub /tmp/hosts.xxx >> /tmp/hosts.new
+        cat /etc/hosts.stub /tmp/hosts.xxx > /tmp/hosts.new
         mv /etc/hosts /etc/hosts.bak
         mv /tmp/hosts.new /etc/hosts
         ;;
