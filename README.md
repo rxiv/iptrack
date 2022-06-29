@@ -17,3 +17,5 @@ Args -
     hosts   - creates the host file
     update  - updates database entry of host with the current assigned
                ip
+
+Requires - jq and curl
